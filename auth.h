@@ -8,4 +8,6 @@ const int LOGIN_ADMIN = -1;
 
 int login(const vector<User>& daftarUser); 
 
+void logout();
+
 #endif

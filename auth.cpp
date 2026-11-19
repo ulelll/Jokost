@@ -34,11 +34,18 @@ int login(const vector<User>& daftarUser){
     }
 
     // kalau salah 
-    cout << "\n Username atau password salah!\n"; 
+    cout << "\nUsername atau password salah!\n"; 
     return LOGIN_FAILED; 
-
-
-
-
-
 }
+
+//logout 
+void logout() {
+        cout << "\n============================\n";
+        cout << "       Logout berhasil.   \n";
+        cout << "============================\n";
+}
+
+
+
+
+
