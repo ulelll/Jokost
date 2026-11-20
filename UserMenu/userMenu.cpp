@@ -3,6 +3,7 @@
 #include "../Auth/auth.h"
 #include "../Tiket/tiket.h"
 #include "../input.h"
+#include "../User/user.h"
 #include <cstdlib>
 using namespace std; 
 
