@@ -1,6 +1,7 @@
 #include <iostream> 
-#include "userMenu.h"
-#include "auth.h"
+#include "./userMenu.h"
+#include "../Auth/auth.h"
+#include "../Tiket/tiket.h"
 using namespace std; 
 
 void userMenu(int userId) {
@@ -17,7 +18,8 @@ void userMenu(int userId) {
 
         switch (pilihan) {
             case 1: 
-                cout << "Buat ticket untuk user (ID: " << userId << ")\n"; //todo: buat menu bikin tiket
+                cout << "Buat ticket untuk user (ID: " << userId << ")\n";
+                    menuTicketUser(); 
                 break;
             case 2:
                 system("cls");

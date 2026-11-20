@@ -14,7 +14,8 @@ int pilihan;
     cout << "2. Pembayaran Kost\n"; //to do: by id yh. alur -> masukin id user -> masukin bulan (atau ama tanggal juga) -> masukin nominal -> masukin status (lunas atau belum) -> masukin keterangan (opsional)
     cout << "3. Ticket Keluhan\n";
     cout << "4. Laporan Pembayaran\n";
-    cout << "5. Logout\n";
+    cout << "5. Manajemen Kamar\n";
+    cout << "6. Logout\n";
     cout << "Pilih menu: ";
     cin >> pilihan;
 

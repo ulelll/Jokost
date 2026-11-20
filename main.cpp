@@ -1,11 +1,12 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "menu.h"
-#include "auth.h"
-#include "user.h"
-#include "adminMenu.h"
-#include "userMenu.h"
+#include "Menu/menu.h"
+#include "Auth/auth.h"
+#include "User/user.h"
+#include "AdminMenu/adminMenu.h"
+#include "UserMenu/userMenu.h"
+#include "Tiket/tiket.h"
 
 using namespace std;
 
@@ -75,30 +76,7 @@ int main() {
                         }
                         case 3: {
                             cout << "Masuk ke menu ticket keluhan.\n";
-                            // TODO: ticket keluhan
-                            if (daftarKeluhan.empty()) {
-                                cout << "Belum ada keluhan masuk.\n";
-                            } else {
-                                for (auto& k : daftarKeluhan) {
-                                    cout << "ID [" << k.id << "] User ID: " << k.userId
-                                         << " | Keluhan: " << k.isi
-                                         << " | Status: " << k.status << "\n";
-                                }
-                                int idUbah, pilihStatus;
-                                cout << "Masukkan ID keluhan yang ingin diubah statusnya (0 untuk skip): ";
-                                cin >> idUbah;
-                                if (idUbah != 0) {
-                                    for (auto& k : daftarKeluhan) {
-                                        if (k.id == idUbah) {
-                                            cout << "1. Diproses | 2. Selesai -> ";
-                                            cin >> pilihStatus;
-                                            if (pilihStatus == 1) k.status = "Diproses";
-                                            else if (pilihStatus == 2) k.status = "Selesai";
-                                            cout << "Status diperbarui.\n";
-                                        }
-                                    }
-                                }
-                            }
+                            menuTicketAdmin();
                             break;
                         }
                         case 4: {
@@ -116,14 +94,20 @@ int main() {
                             cout << "Total Belum Lunas: Rp" << totalBelum << "\n";
                             break;
                         }
-                        case 5:
+                        case 5: { //blm ditambahin calling function buat manajemen kamar
+                            system("cls");
+                            cout << "============================\n";
+                            cout << "Masuk ke menu manajemen kamar.\n";
+                        break;
+                        }
+                        case 6:
                             system("cls");
                             logout();
                             break;
                         default:
                             cout << "Pilihan tidak valid!\n";
                     }
-                } while (pilihanAdmin != 5);
+                } while (pilihanAdmin != 6);
             }
             else if (hasil != LOGIN_FAILED) {
                 system("cls");

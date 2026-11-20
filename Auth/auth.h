@@ -1,7 +1,7 @@
 #ifndef AUTH_H 
 #define AUTH_H 
 #include <vector> 
-#include "user.h"
+#include "../User/user.h"
 
 const int LOGIN_FAILED = 0; 
 const int LOGIN_ADMIN = -1; 
