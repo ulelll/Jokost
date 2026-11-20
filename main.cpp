@@ -7,6 +7,8 @@
 #include "AdminMenu/adminMenu.h"
 #include "UserMenu/userMenu.h"
 #include "Tiket/tiket.h"
+#include "Kamar/kamar.h"
+#include "input.h"
 
 using namespace std;
 
@@ -94,10 +96,12 @@ int main() {
                             cout << "Total Belum Lunas: Rp" << totalBelum << "\n";
                             break;
                         }
-                        case 5: { //blm ditambahin calling function buat manajemen kamar
-                            system("cls");
+                        case 5: { 
+                            //system("cls");
                             cout << "============================\n";
                             cout << "Masuk ke menu manajemen kamar.\n";
+                            vector<Kamar> daftarKamar = buatDataKamar(daftarUser);
+                            menuManajemenKamar(daftarKamar, daftarUser);
                         break;
                         }
                         case 6:

@@ -1,5 +1,6 @@
 #include <iostream> 
 #include "menu.h"
+#include "../input.h"
 using namespace std;
 
 int mainMenu(){
@@ -12,7 +13,7 @@ int pilihan;
     cout << "1. Login\n";
     cout << "0. Keluar\n";
     cout << "Pilih menu: ";
-    cin >> pilihan;
+    pilihan = readInt("Pilih menu: ");
 
     return pilihan; 
 

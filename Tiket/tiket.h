@@ -29,15 +29,15 @@ public:
 extern std::vector<Ticket> daftarTicket;
 
 //fitur user
-void userBuatTicket();
-void userLihatTicket();
+void userBuatTicket(int idPenghuni);
+void userLihatTicket(int idPenghuni);
 
 //fitur admin
 void adminLihatSemuaTicket();
 void adminUbahStatus();
 
 //menu
-void menuTicketUser();
+void menuTicketUser(int idPenghuni);
 void menuTicketAdmin();
 
 #endif

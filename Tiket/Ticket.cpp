@@ -74,13 +74,7 @@ static void prosesUbahStatus(int idTicket) {
 
 //fitur user
 
-void userBuatTicket() {
-    int idPenghuni = readInt("Masukkan ID Penghuni : ");
-    if (!penghuniTerdaftar(idPenghuni)) {
-        cout << "ID penghuni tidak terdaftar!" << endl;
-        return;
-    }
-
+void userBuatTicket(int idPenghuni) {
     string deskripsi = readString("Deskripsi keluhan     : ");
     if (deskripsi.empty()) {
         cout << "Deskripsi tidak boleh kosong!" << endl;
@@ -94,15 +88,7 @@ void userBuatTicket() {
          << " (Status: Pending)" << endl;
 }
 
-void userLihatTicket() {
-    int idPenghuni;
-    cout << "Masukkan ID Penghuni : ";
-    cin >> idPenghuni;
-    if (!penghuniTerdaftar(idPenghuni)) {
-        cout << "ID penghuni tidak terdaftar!" << endl;
-        return;
-    }
-
+void userLihatTicket(int idPenghuni) {
     bool ada = false;
     cout << "\n=== Ticket Milik Anda ===" << endl;
     for (const Ticket& t : daftarTicket) {
@@ -158,7 +144,7 @@ void adminUbahStatus() {
 
 
 //menu
-void menuTicketUser() {
+void menuTicketUser(int idPenghuni) {
     int pilih;
     do {
         cout << "\n=== TICKET KELUHAN (USER) ===" << endl;
@@ -167,8 +153,8 @@ void menuTicketUser() {
         cout << "0. Kembali" << endl;
         pilih = readInt("Pilih : ");
         switch (pilih) {
-            case 1: userBuatTicket(); break;
-            case 2: userLihatTicket(); break;
+            case 1: userBuatTicket(idPenghuni); break;
+            case 2: userLihatTicket(idPenghuni); break;
             case 0: break;
             default: cout << "Pilihan tidak valid!" << endl;
         }
